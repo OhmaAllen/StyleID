@@ -199,6 +199,7 @@ class style_transfer_module():
                 q_c, k_s, v_s = self.attn_features_modify[name][int(self.cur_t)]
                 
                 # style injection
+                print("11111111111 I am here!")
                 q_hat_cs = q_c * self.style_transfer_params['gamma'] + q_cs * (1 - self.style_transfer_params['gamma'])
                 k_cs, v_cs = k_s, v_s
                 
