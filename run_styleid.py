@@ -33,10 +33,10 @@ def feat_merge(opt, cnt_feats, sty_feats, start_step=0):
                 'gamma':opt.gamma,
                 'T':opt.T,
                 'timestep':_,
-                }} for _ in range(40)]
+                }} for _ in range(50)]
 
     for i in range(len(feat_maps)):
-        if i < (40 - start_step):
+        if i < (50 - start_step):
             continue
         cnt_feat = cnt_feats[i]
         sty_feat = sty_feats[i]
@@ -147,7 +147,7 @@ def main():
     feat_maps = [{'config': {
                 'gamma':opt.gamma,
                 'T':opt.T
-                }} for _ in range(40)]
+                }} for _ in range(50)]
 
     def ddim_sampler_callback(pred_x0, xt, i):
         save_feature_maps_callback(i)
